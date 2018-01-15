@@ -1,0 +1,81 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex,final]{graphicx} % avant {babel} sinon pb avec MetaPost
+\usepackage[frenchb]{babel}
+  \frenchbsetup{StandardLists=true}
+  \renewcommand{\labelitemi}{\textbullet}
+
+\usepackage[tmargin=1cm,bmargin=1cm,hmargin=1cm]{geometry}
+\usepackage{multido}
+
+\setlength{\headheight}{0pt}
+\definecolor{gris}{gray}{0.5}
+\newcommand{\points}[1]
+  {\raisebox{-.1cm}[7mm]{\makebox[#1]{\textcolor{gris}{\dotfill}}}}
+\newcommand{\lignepoints}
+  {\raisebox{-.1cm}[7mm]{}\makebox[0pt]{}\textcolor{gris}{\dotfill}\makebox[0pt]{}}
+\newcommand{\coords}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\lignespoints}[1]{\multido{}{#1}{\\\lignepoints}}
+
+\newcounter{exo}
+\setcounter{exo}{1}
+
+\newcommand{\ex}[2][]{
+  \vspace{1ex}
+
+  \noindent
+  \textbf{\underline{Exercice \arabic{exo}} #1\\ }
+   \stepcounter{exo}
+  \noindent #2
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+        Classe de 2NDE1  \hfill {\large \textbf{Devoir Maison pour le 15/01/2018}} \hfill G. CLAUS
+        
+        \vspace{1mm}
+        \hrule
+        \vspace{1mm}
+        Nom Prénom :  \lignepoints{} \\
+        
+        \ex{
+       Le standard d’un cabinet médical dispose de deux lignes de téléphone. \\
+    On considère les événements :    
+    \begin{itemize}
+        \item $O_1$ : « La 1\up{ère} ligne est occupée ».
+        \item $O_2$ : « La 2\up{ème} ligne est occupée ».
+    \end{itemize}
+    Une étude statistique montre que :
+    \begin{itemize}
+        \item $P(O_1) = 0,4$
+        \item $P(O_2) = 0,3$
+        \item $P(O_1 \cap O_2 ) = 0,2$
+    \end{itemize}
+    Calculer la probabilité des événements suivants.
+    \begin{enumerate}
+        \item « La ligne 1 est libre ».
+        \item « Au moins une des lignes est occupée ».
+        \item « Au moins une des lignes est libre ».
+    \end{enumerate}
+    }
+    
+    \ex{
+    Dans un pays européen, 12\,\% des moutons sont atteints par une maladie. 
+    Un test de dépistage de cette maladie vient d'être mis sur le marché mais il n'est pas totalement fiable.
+
+    Une étude a montré que quand le mouton est malade le test est positif dans 93\,\% des cas ; 
+    quand le mouton est sain, le test est négatif dans 97\,\% des cas.
+
+    On note $M$ si le mouton est malade et $S$ s'il est sain. On note $P$ si le test est positif, $N$ si le test est négatif.
+
+    \begin{enumerate}
+        \item Compléter l'arbre de probabilité suivant :\\ 
+         \item Si on prend un mouton au hasard, quelle est la probabilité que le test soit positif ?
+    \end{enumerate}
+    }
+        
+\end{document}
+
